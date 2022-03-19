@@ -1,0 +1,11 @@
+const logger = store => next => action => {
+  console.log('dispatching', action);
+
+  const result = next(action);
+
+  console.log('dispatch complete', store.getState());
+
+  return result;
+};
+
+export {logger};
